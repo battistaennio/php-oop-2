@@ -6,7 +6,7 @@ class Food extends Product{
     public $ageRange = [];
     public $weight;
 
-    public function __construct(string $_title, float $_price, string $_img, string $_composition, array $_ageRange, int $_weight){
+    public function __construct(string $_title, float $_price, string $_img, string $_composition, array $_ageRange, float $_weight){
 
         parent::__construct($_title, $_price, $_img);
         $this->composition = $_composition;

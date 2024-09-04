@@ -56,7 +56,7 @@ require_once __DIR__ . '/data/db.php';
 
                 <div class="details-section">
                     <h4>Età:</h4>
-                    <span>Da <?php echo $product->ageRange[0] ?> a <?php echo $product->ageRange[1] ?> anni</span>
+                    <span>Da <?php echo $product->ageRange[0] ?> a <?php echo $product->ageRange[1] ?></span>
                 </div>
 
                 <div class="details-section">
