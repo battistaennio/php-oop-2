@@ -8,7 +8,6 @@ Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, titolo, 
 <?php
 
 require_once __DIR__ . '/Models/Product.php';
-require_once __DIR__ . '/Models/Category.php';
 require_once __DIR__ . '/Models/Food.php';
 require_once __DIR__ . '/data/db.php';
 
@@ -23,6 +22,10 @@ require_once __DIR__ . '/data/db.php';
     <title>Zoolandia</title>
 
     <link rel="stylesheet" href="style/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 <body>
 
@@ -46,7 +49,7 @@ require_once __DIR__ . '/data/db.php';
 
                 <div class="details-section">
                     <h4>Categoria:</h4>
-                    <span>icona</span>
+                    <span><?php echo $product->category->name ?>  <?php echo $product->category->icon ?></span>
                 </div>
 
                 <div class="details-section">
