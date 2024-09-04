@@ -8,7 +8,7 @@ Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, titolo, 
 <?php
 
 require_once __DIR__ . '/Models/Product.php';
-require_once __DIR__ . '/Models/Food.php';
+require_once __DIR__ . '/Models/Article.php';
 require_once __DIR__ . '/data/db.php';
 
 
@@ -54,7 +54,7 @@ require_once __DIR__ . '/data/db.php';
 
                 <div class="details-section">
                     <h4>Tipo:</h4>
-                    <span><?php echo $product->composition ?></span>
+                    <span><?php echo $product->type ?></span>
                 </div>
 
                 <div class="details-section">
