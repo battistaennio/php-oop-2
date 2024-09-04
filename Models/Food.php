@@ -12,5 +12,7 @@ class Food extends Product{
         $this->composition = $_composition;
         $this->ageRange = $_ageRange;
         $this->weight = $_weight;
+        
     }
+
 }

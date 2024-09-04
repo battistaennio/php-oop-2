@@ -7,6 +7,11 @@ Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, titolo, 
 
 <?php
 
+require_once __DIR__ . '/Models/Product.php';
+require_once __DIR__ . '/Models/Category.php';
+require_once __DIR__ . '/Models/Food.php';
+require_once __DIR__ . '/data/db.php';
+
 
 ?>
 
@@ -23,34 +28,47 @@ Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, titolo, 
 
     <div id="wrapper">
 
-      <div class="card">
+        <?php foreach($products as $product): ?>
+            <div class="card">
 
-        <img src="https://arcaplanet.vtexassets.com/arquivos/ids/288162/_0005_D-DERMA-HYPO-PACKSHOT-B1.jpg?v=638241437800970000" alt="">
+                <img src="<?php echo $product->img ?>" alt="<?php echo $product->title ?> - copertina">
 
-        <div class="card-details">
+                <div class="card-details">
 
-          <div class="details-section">
-            <h2>Titolo</h2>
-          </div>
+                <div class="details-section">
+                    <h2><?php echo $product->title ?></h2>
+                </div>
 
-          <div class="details-section">
-            <h4>Prezzo:</h4>
-            <span>00.00</span>
-          </div>
+                <div class="details-section">
+                    <h4>Prezzo:</h4>
+                    <span><?php echo $product->price ?> €</span>
+                </div>
 
-          <div class="details-section">
-            <h4>Categoria:</h4>
-            <span>icona</span>
-          </div>
+                <div class="details-section">
+                    <h4>Categoria:</h4>
+                    <span>icona</span>
+                </div>
 
-          <div class="details-section">
-            <h4>Tipo:</h4>
-            <span>type</span>
-          </div>
+                <div class="details-section">
+                    <h4>Tipo:</h4>
+                    <span><?php echo $product->composition ?></span>
+                </div>
 
-        </div>
+                <div class="details-section">
+                    <h4>Età:</h4>
+                    <span>Da <?php echo $product->ageRange[0] ?> a <?php echo $product->ageRange[1] ?> anni</span>
+                </div>
 
-      </div>
+                <div class="details-section">
+                    <h4>Peso Articolo:</h4>
+                    <span><?php echo $product->weight ?> kg</span>
+                </div>
+
+
+                </div>
+
+            </div>
+        <?php endforeach; ?>
 
     </div>
 </body>
