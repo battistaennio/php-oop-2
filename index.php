@@ -9,6 +9,22 @@ Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, titolo, 
 
 require_once __DIR__ . '/data/db.php';
 
+$provaErrore = new Food(
+    "Crocchette Monge",
+    32.00,
+    "https://arcaplanet.vtexassets.com/arquivos/ids/301052/monge-natural-superpremium-adult-medium-con-pollo-10069077--1-.jpg?v=638509503879370000",
+    "Cibo",
+    [1, "tutte le età"],
+    12,
+    new Category("Cane", '<i class="fa-solid fa-dog"></i>')
+);
+
+try {
+    $provaErrore->setPrice(0);
+} catch (Exception $e) {
+    echo "Errore: " . $e->getMessage();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +59,7 @@ require_once __DIR__ . '/data/db.php';
 
                     <div class="details-section">
                         <h4>Prezzo:</h4>
-                        <span><?php echo $product->price ?> €</span>
+                        <span><?php echo $product->getPrice() ?> €</span>
                     </div>
 
                     <div class="details-section">
