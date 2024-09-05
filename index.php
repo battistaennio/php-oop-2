@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/data/db.php';
 
-$provaErrore = new Food(
+$provaErroreProductFood = new Food(
     "Crocchette Monge",
     32.00,
     "https://arcaplanet.vtexassets.com/arquivos/ids/301052/monge-natural-superpremium-adult-medium-con-pollo-10069077--1-.jpg?v=638509503879370000",
@@ -12,16 +12,35 @@ $provaErrore = new Food(
     new Category("Cane", '<i class="fa-solid fa-dog"></i>')
 );
 
+//errore price (product)
 try {
-    $provaErrore->setPrice(0);
+    $provaErroreProductFood->setPrice(0);
 } catch (Exception $e) {
     echo "Errore: " . $e->getMessage() . "<br>";
 }
 
+//errore weight (food)
 try {
-    $provaErrore->setWeight(800);
+    $provaErroreProductFood->setWeight(800);
 } catch (Exception $e) {
-    echo "Errore: " . $e->getMessage();
+    echo "Errore: " . $e->getMessage() . "<br>";
+}
+
+$provaErroreToy = new Toy(
+    "Gioco Gatto Canna Da Pesca",
+    4.49,
+    "https://arcaplanet.vtexassets.com/arquivos/ids/273114/LOVEDI-GIOCO-GATTO-CANNA-DA-PESCA-CON-PESCE-CM.42.jpg?v=637921027967030000",
+    "Gioco",
+    "Misto Tessuto e Plastica",
+    "Cuccioli",
+    new Category("Gatto", '<i class="fa-solid fa-cat"></i>')
+);
+
+//errore lifeStage (toy)
+try {
+    $provaErroreToy->setLifeStage("Gino Paoli");
+} catch (Exception $e) {
+    echo "Errore: " . $e->getMessage() . "<br>";
 }
 
 
