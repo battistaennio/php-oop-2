@@ -43,6 +43,22 @@ try {
     echo "Errore: " . $e->getMessage() . "<br>";
 }
 
+$provaErroreBed = new Bed(
+    "Anione Cuccia con Tetto Apribile",
+    120.60,
+    "https://arcaplanet.vtexassets.com/arquivos/ids/286198/1e5a873ba3376aa4f0febd802bf88849a2f17714_bf9398685ee636a7f1cf6dc96b7075573766045c--1-.jpg?v=638205175188900000",
+    "Cuccia",
+    "Casetta",
+    "Grande",
+    new Category("Cane", '<i class="fa-solid fa-dog"></i>')
+);
+
+//errore size (bed)
+try {
+    $provaErroreBed->setSize("Gargantuesco");
+} catch (Exception $e) {
+    echo "Errore: " . $e->getMessage() . "<br>";
+}
 
 ?>
 
@@ -126,7 +142,7 @@ try {
 
                         <div class="details-section">
                             <h4>Dimensione:</h4>
-                            <span><?php echo $product->size ?></span>
+                            <span><?php echo $product->getSize() ?></span>
                         </div>
 
                     <?php endif; ?>
