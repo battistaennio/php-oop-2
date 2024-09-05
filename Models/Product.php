@@ -20,7 +20,7 @@ class Product
     public function setPrice($price)
     {
         if ($price <= 0) {
-            throw new Exception("Il prezzo non può avere un valore negativo o essere uguale a 0");
+            throw new Exception("Il prezzo '" . $price . "' non può avere un valore negativo o essere uguale a 0");
         }
         $this->price = $price;
     }
