@@ -1,10 +1,3 @@
-<!-- Immaginare quali sono le classi necessarie per creare uno shop online con le seguenti caratteristiche:
-L’e-commerce vende prodotti per animali.
-I prodotti sono categorizzati, le categorie sono Cani o Gatti.
-I prodotti saranno oltre al cibo, anche giochi, cucce, etc
-Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, titolo, prezzo, icona della categoria ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia). -->
-
-
 <?php
 
 require_once __DIR__ . '/data/db.php';
@@ -22,8 +15,15 @@ $provaErrore = new Food(
 try {
     $provaErrore->setPrice(0);
 } catch (Exception $e) {
+    echo "Errore: " . $e->getMessage() . "<br>";
+}
+
+try {
+    $provaErrore->setWeight(800);
+} catch (Exception $e) {
     echo "Errore: " . $e->getMessage();
 }
+
 
 ?>
 
@@ -83,7 +83,7 @@ try {
 
                         <div class="details-section">
                             <h4>Peso Articolo:</h4>
-                            <span><?php echo $product->weight ?> kg</span>
+                            <span><?php echo $product->getWeight() ?> kg</span>
                         </div>
 
                     <?php elseif ($product instanceof Toy): ?>
